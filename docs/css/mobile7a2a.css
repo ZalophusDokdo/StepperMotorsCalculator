@@ -1,0 +1,533 @@
+/*
+ * Mobile Device Stylesheets
+ * 
+================================================== */
+
+/* Smaller than standard 720px (devices and browsers) */
+@media only screen and (max-width: 980px) {
+	.contaner{
+		max-width: 90%;
+	}
+	li.last{
+		float: none;
+		clear: both;
+		margin-top: 20px!important;
+		display: inline-block!important;
+		width: 100%;
+	}
+    .woocommerce .checkout-button.button.alt {
+        margin-top: 0!important;
+    }
+}
+
+@media only screen and (max-width: 890px){
+	
+	.small-screen-device-nav{
+		display: block;
+		margin-top: -50px;
+		margin-bottom: 50px;
+	}
+	
+	.bp-klein-group-avatar img{
+        margin-top: 0px!important;
+    }
+	
+	#groups-list img.avatar,
+	#members-list img.avatar{
+		width: 100%!important;
+		height: auto;
+	}
+	
+	#groups-order-by{
+		display: block;
+		clear: both;
+	}
+
+}
+
+/* Smaller Screen Size */
+
+@media only screen and (max-width: 767px) and (min-width: 225px){
+	.container {
+		width: auto;
+		max-width: 420px;
+	}
+	
+	body {
+        line-height: 160%;
+    }
+	
+	#groups-list li,
+	#members-list li{
+		clear: both;
+		display: inline-block;
+		width: 100%;
+	}
+	
+	#groups-list img.avatar,
+	#members-list img.avatar{
+		width: 100%!important;
+		height: auto;
+	}
+	
+	.klein-groups-item .col-md-8{
+		padding-left: 20px;
+	}
+	a#wp-admin-bar-user-info img.avatar,
+	a#logo-anchor img{
+		width: auto;
+	}
+    #klein-top-updates-nav {
+        right: auto;
+    }
+	
+	
+    
+    #site-description {
+        display: inline-block;
+    }
+    
+    #site-description h1 {
+        font-size: 1.8em;
+    }
+    
+    #site-description h2 {
+        font-size: 2.5em;
+    }
+    
+    
+    
+    .entry-title,h1,h2,h3,h4,h5,h6 {
+        margin-bottom: 20px;
+        line-height: 120%;
+    }
+    
+    .entry-title,h1 {
+        font-size: 26px;
+    }
+    
+    h2 {
+        font-size: 24px;
+    }
+    
+    h3 {
+        font-size: 22px;
+    }
+    
+    h4 {
+        font-size: 20px;
+    }
+    
+    h5 {
+        font-size: 18px;
+    }
+    
+    h6 {
+        font-size: 16px;
+    }
+    
+    .front-page-slider-slide {
+        height: auto;
+    }
+    
+    .bx-has-pager {
+        margin-top: 20px;
+    }
+    
+    .widget:last-child {
+        margin-bottom: 20px;
+    }
+    
+    .item-list-tabs#subnav li,.item-list-tabs li {
+        width: 100%;
+    }
+    .item-list-tabs{
+		width: 100%;
+	}
+    .labeled-box {
+        right: 0;
+    }
+    
+    .pull-right,.pull-left {
+        float: none!important;
+    }
+	
+	.nav-next.pull-right,
+	#site-navigation.pull-right{
+		float: right!important;
+	}
+	
+    .nav-previous.pull-left,
+    .site-branding.pull-left {
+        float: left!important;
+    }
+	
+	#reply-title, .comments-title{
+		font-size: 16px;
+	}
+    
+    #font-page-highlights-nav {
+        margin-top: 20px;
+    }
+    
+    .nav-next.pull-right,
+    #font-page-highlights-nav,.desktop-menu .pull-right,.main-navigation.pull-right {
+        float: right;
+    }
+    
+    #bp-klein-user-bar #bp-klein-user-bar-action .pull-right {
+		display: inline-block;
+		margin-top: 10px;
+		float: none!important;
+    }
+	
+    
+    .blog-author .bp-profile-link,.blog-author .author-post-link {
+        width: 100%;
+    }
+    
+    .blog-author .bp-profile-link a,.blog-author .author-post-link a {
+        width: 100%;
+    }
+    
+    .item-list-tabs#subnav li.last,.item-list-tabs#subnav li.last,.item-list-tabs li.last,li.last {
+        display: inline-block;
+        float: none;
+        clear: both;
+        margin-top: 10px;
+        border-bottom: none;
+    }
+    
+    .item-list-tabs#subnav {
+        margin-top: -15px;
+    }
+    
+    .item-list-tabs li.feed {
+        margin: 0;
+    }
+    
+    .item-list-tabs li.feed a,.item-list-tabs#subnav li#activity-filter-select,li#groups-order-select {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 0 !important;
+    }
+	
+	.woocommerce table.cart td.actions .button.alt, .woocommerce-page table.cart td.actions .button.alt,
+	.woocommerce-page #content table.cart td.actions .button.alt
+	{
+		margin-top: 20px;
+		display: block;
+		clear: both;
+	}
+    
+    #groups-directory-form label {
+        clear: both;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+	
+    #main .bx-wrapper .bx-pager {
+        bottom: -46px !important;
+        text-align: left;
+    }
+    
+    #main #front-page-highlights-nav {
+        margin-top: 10px;
+    }
+	
+	#search-message-form{
+		margin-top: 20px;
+		display: inline-block;
+	}
+	
+    /*=
+     mob modifications */
+
+    /*= Search box Container
+    ----------- */
+    .col-md-4.col-sm-4 {
+        clear: both;
+    }    
+
+    /*= Registration Page
+    ----------- */
+    #profile-details-section {
+        margin-top: 30px;
+    }
+    #register-page.page {
+        margin-bottom: 35px;
+    }
+
+    /*= Archive Pages
+    ----------- */
+    .blog-content-readmore {
+        float: left;
+        margin-top: 7px;
+        margin-bottom: 7px;
+    }
+
+    /*= Static Pages/Blocks
+    ----------- */
+    #footer-widgets > .container > .col-md-3.col-sm-3 {
+        margin-top: 25px;
+        float: left;
+        width: 100%;
+    }
+
+    /*= Groups
+    ------------ */
+    aside.widget.buddypress .item-options a {
+        width:75px;
+        max-width:90px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    aside.widget.buddypress #members-list-options {
+        max-height: 40px;
+    }
+    #activity-stream li {
+        margin-bottom: 25px;
+    }
+    #secondary aside.widget_bp_core_members_widget {
+        margin-top: 25px;
+    }
+    a.group-button {
+        margin-top: 2px;
+        margin-bottom: 3px;
+    }
+
+    /*= Static Pages/Blocks
+    ----------- */
+    .bx-controls.bx-has-pager {
+        margin-left: 15px;
+    }
+
+    /*= Notices
+    ----------- */
+    #sitewide-notice {
+        width: 90%;
+        max-width: 90%;
+        margin-left: 5%;
+    }
+
+    /*= Friends
+    ----------- */
+    body.friends .bp-klein-members-item .item-title h5 {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }  
+
+    /*= Profile General Settings
+    ----------- */
+    .general.buddypress.settings #settings-form input[type=password] {
+        margin-bottom: 1px;
+        margin-top: 6px;
+    }
+    .general.buddypress.settings #settings-form div.submit {
+        margin-top: 7px;
+    }
+
+    /*= WooCommerce Shortcodes
+    ----------- */
+    .woocommerce form.track_order .form-row input.input-text[type="text"] {
+        margin-bottom: 0;
+    }
+    .woocommerce {
+        overflow: hidden;
+        margin-bottom: 25px;
+    }
+    .woocommerce ul.products {
+        overflow: hidden;
+        margin-bottom: 15px;
+    }
+    .woocommerce .products li.product-category.product, .woocommerce .products li.product {
+        min-height: 0!important;
+        height: auto !important;
+    }
+    .woocommerce .products li.product-category.product.last, .woocommerce .products li.product.last {
+        margin-top: 0!important;
+    }
+	.woocommerce > form > p.form-row > label[for="password_1"], .woocommerce > form > p.form-row > label[for="password_2"] {
+        min-height: 45px;
+    }
+    .woocommerce .checkout-button.button.alt {
+        margin-top: 20px!important;
+    }
+    .woocommerce .cart-collaterals .shipping_calculator, .woocommerce-page .cart-collaterals .shipping_calculator {
+        float: left;
+    }
+}
+
+@media only screen and (max-width: 455px) and (min-width: 225px){
+	/*= Modal
+	----------- */
+	.klein .login-remember,
+	.klein .login-submit,
+	.klein .login-facebook-connect{
+		clear: both;
+		display: block;
+		float: none;
+	}
+
+    /*=
+     mob modifications */
+
+    /*= Next post button
+    ----------- */
+    .nav-previous.pull-left {
+        margin-bottom: 5px;
+        margin-right: 10px;
+    }
+    .nav-next.pull-right {
+        float: left!important;
+    }
+    /*= Comment list
+    ----------- */
+    .comment-author .avatar {
+        margin-left: 0;
+        left:0;
+        position: relative;
+    }
+    #reply-title, .comments-title {
+        margin-left: 0;
+    }
+    li.comment {
+        margin-left: 0;
+    }
+    .comment-form {
+        width: 100%;
+    }
+
+    /*= Login Page
+    ----------- */
+    body.login div#login form#loginform {
+        margin-right: 8px;
+    }
+
+    /*= Reset Password
+    ----------- */
+    .woocommerce form.lost_reset_password .form-row-first {
+        width: 100%;
+    }
+    .woocommerce form.lost_reset_password .form-row {
+        margin-top: 0;
+    }
+    .woocommerce form.lost_reset_password {
+        margin-bottom: 30px;
+    }
+
+    /*= Account Activation
+    ----------- */
+    .bp_activate.type-bp_activate.status-publish {
+        margin-bottom: 30px;
+    }
+    
+    /*= Activity Page
+    ----------- */
+
+    #whats-new-form #whats-new-content {
+        float: left;
+        min-height: 100px;
+    }
+
+    /*= Members Profile Page
+    ----------- */
+    .xprofile .container.site-main #secondary {
+        margin-top: 10px;
+        float: left;
+    }
+
+    /*= Blog Post Index
+    ----------- */
+    .nav-previous-link .btn {
+        padding-right: 3px;
+    } 
+    .nav-next-link .btn {
+        padding-left: 3px;
+    }
+
+    /*= 404 Page
+    ------------ */
+    .error404 #content.site-content, .error-404 #content.site-content {
+        width: 100%;
+        padding: 0 0 0 30px;
+    }
+    
+    /*= Forums
+    ------------ */
+    #bbpress-forums form#new-post fieldset > div {
+        width:99%;
+        float:left;
+    }
+    #bbpress-forums li {
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    #bbpress-forums fieldset.bbp-form label[for=bbp_topic_subscription] {
+        display: inline;
+    }
+
+    /*= Messages
+    ----------- */
+    form#send_message_form label[for="subject"] {
+        display: block;
+        margin-top: 10px;
+    } 
+    body.notices #message-threads.messages-notices tbody td:last-child a.button:first-child {
+        display: none;
+    }
+    body.sentbox .entry-content #buddypress #item-body .item-list-tabs {
+        margin-bottom: 0px;
+    }
+
+    /*= Group Invitation
+    ----------- */
+    #send-invite-form #invite-list {
+        margin-top: 15px;
+    }
+    #send-invite-form #friend-list li h4 {
+        margin-bottom: 10px;
+    }
+
+    /*= Forum Replies
+    ----------- */
+    #bbpress-forums .forums.bbp-replies .bbp-body .bbp-meta .bbp-admin-links {
+        float: left;
+    }
+
+    /*= Single Product
+    ----------- */
+    .single-product #primary #content .product .thumbnails > a {
+        margin-left: 0;
+        margin-right: 4px;
+    }    
+
+    /*= WooCommerce Shortcodes
+    ----------- */
+    .woocommerce .cart-collaterals .shipping_calculator, .woocommerce-page .cart-collaterals .shipping_calculator {
+        float: left!important;
+    }
+    .woocommerce form.checkout #customer_details.col2-set .col-1, .woocommerce form.checkout #customer_details.col2-set .col-2 {
+        width: 100%;
+    }
+    .woocommerce .cart-collaterals .shipping_calculator, .woocommerce-page .cart-collaterals .shipping_calculator, .woocommerce .cart-collaterals .cart_totals, .woocommerce-page .cart-collaterals .cart_totals {
+        float: left;
+        width: 100%!important;
+    }
+
+}
+@media only screen and (max-width: 351px) {
+
+    /*= WooCommerce Shortcodes
+    ----------- */
+    .woocommerce .woocommerce-message a.button, .woocommerce-page .woocommerce-message a.button {
+        clear: both;
+        display: block;
+        margin-bottom: 50px;
+        float: right;
+    }
+    form table.shop_table.cart input[name="update_cart"] {
+        float: left;
+        margin: 10px 0!important;
+    }
+}

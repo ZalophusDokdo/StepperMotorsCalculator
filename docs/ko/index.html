@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Stepper Motors Calculator</title>
+<link rel="pingback" href="#">
+
+<!-- favicon -->
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<!-- favicon end -->
+
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+
+<link rel='stylesheet' id='klein-bootstrap-css'  href='../css/bootstrap7a2a.css?ver=2.1.4.4' type='text/css' media='all' />
+<link rel='stylesheet' id='klein-layout-css'  href='../css/layout7a2a.css?ver=2.1.4.4' type='text/css' media='all' />
+<!--link rel='stylesheet' id='klein-mobile-stylesheet-css'  href='../css/mobile7a2a.css?ver=2.1.4.4' type='text/css' media='all' /-->
+
+<script type='text/javascript' src='../js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
+<script type='text/javascript' src='../js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
+
+</head>
+
+<body class="page-template page-template-calculator page-template-calculator-php page page-id-3416 group-blog klein wpb-js-composer js-comp-ver-4.3.4 vc_responsive">
+
+<div id="page" class="hfeed site boxed">
+<div id="main" class="container site-main">
+
+  <!-- Breadcrumb NavXT 5.2.0 -->
+
+  <script type="text/javascript">
+            var $ = jQuery;
+  </script>
+
+  <div id="calculator">
+    <div class="row">
+      <div class="col-md-9">
+
+        <section id="steppers">
+
+          <div id="steppermotors"></div>
+          <div class="page-header">
+            <h1>스테퍼 모터</h1>
+          </div>
+
+          <div id="belt">
+            <div id="stepspermmbelt"> </div>
+            <h2 id="headings">밀리미터 당 스텝 - 벨트 구동 시스템</h2>
+            <p>결과는 이론적으로는 옳지만, 가장 세밀한 세부사항을 얻으려면 기계를 보정해야 할 수도 있습니다. 이것은 좋은 시작입니다.</p>
+            <div class="calculation well">  
+            <div class="row">
+            <div class="col-md-6">
+            <div class="form-group">
+              <label for="StepSize">모터 스텝 각도</label>
+              <select id="StepSize" class="form-control change">
+                <option value="1.8" selected>1.8° (200 per revolution)</option>
+                <option value="0.9">0.9° (400 per revolution)</option>
+                <option value="7.5">7.5° (48 per revolution)</option>
+              </select>
+            </div>
+            </div>
+              
+            <div class="col-md-6">
+            <div class="form-group">
+            <label for="MicroStepping">드라이버 마이크로 스테핑</label>
+              <select id="MicroStepping" class="form-control change">
+                <option value="1">1 - full step</option>
+                <option value="2">1/2 - half step</option>
+                <option value="4">1/4 - quater step</option>
+                <option value="8">1/8 - uStep (mostly Gen6)</option>
+                <option value="16" selected>1/16 - uStep (mostly Pololu)</option>
+                <option value="16">1/16- uStep (Smoothieboard)</option>
+                <option value="32">1/32- uStep (Crazy Smoothieboard)</option>
+              </select>
+            </div>
+            </div></div>
+
+            <div class="row">
+            <div class="col-md-6">
+            <div class="form-group">
+              <label for="BeltPitch">벨트 피치 (mm)</label>
+              <input type="text" id="BeltPitch" value="2" class="change form-control" /> 
+            </div>
+            </div>
+
+            <div class="col-md-6">
+            <div class="form-group">   
+              <label for="BeltPresets">벨트 사전 설정</label>
+              <select  id="BeltPresets" class="form-control change">
+                <option value="2.0">2mm Pitch (GT2 mainly)</option>
+                <option value="2.03">MXL belt (2.03mm)</option>
+                <option value="2.5">T2.5 (2.5mm)</option>
+                <option value="3">3mm Pitch (GT2, HTD)</option>
+                <option value="5">5mm Pitch (T5, GT2, HTD)</option>
+                <option value="5.08">0.2" XL belt (5.08mm)</option>
+              </select>
+            </div>
+            </div>
+            </div>
+
+            <div class="row">
+            <div class="col-md-6">
+            <div class="form-group">
+
+            <label for="ToothCount">도르래 카운트</label>
+            <input type="text" id="ToothCount" value="8" class="change form-control" />
+            </div>
+            </div>
+            </div>
+            </div>
+
+            <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>결과</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="success">
+                <td style="background-color:#CBE86B;"><strong class="answer">0</strong></td>
+               </tr>
+            </tbody>
+
+            <thead>
+              <tr>
+                <td>해상도</td>
+                <td>이빨 수</td>
+                <td>스텝 각도</td>
+                <td>스테핑</td>
+                <td>벨트</td>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr class="success">
+                <td><span class="CopyResolution"></span>micron</td>
+                <td><span class="CopyToothCount">0</span></td>
+                <td><span class="CopyStepSize">0</span>°</td>
+                <td>1/<span class="CopyMicroStepping">0</span>th</td>
+                <td><span class="CopyBeltPitch">0</span>mm</td>
+               </tr>
+            </tbody>
+            </table>
+
+            <div class="panel panel-default">
+              <div class="panel-heading">예제</div>
+              <div class="panel-body"><p><strong>M92</strong> g-code는 실시간으로 mm 당 스텝을 설정할 수 있습니다. 다음은 X 축에 대한 결과를 보여주는 예입니다.</p>
+              <pre>M92 X<span class="answer">0</span></pre>
+              </div>
+            </div>
+
+            <script type="text/javascript"> 
+            var $ = jQuery;
+
+            function SteppersBelt(){ 
+            var StepSize, Microstepping, BeltPitch, ToothCount;
+            StepSize = parseFloat($("#steppers #belt #StepSize").val());
+            Microstepping = parseInt($("#steppers #belt #MicroStepping").val());
+            BeltPitch = parseFloat($("#steppers #belt #BeltPitch").val());
+            ToothCount = parseInt($("#steppers #belt #ToothCount").val());
+            var StepsPerMM;
+            StepsPerMM = ((360/StepSize)*Microstepping)/(BeltPitch*ToothCount);
+            $("#steppers #belt .answer").text(StepsPerMM.toFixed(2)); 
+
+            $("#steppers #belt .CopyResolution").text((1./StepsPerMM)*1000);
+            $("#steppers #belt .CopyToothCount").text(ToothCount);
+            $("#steppers #belt .CopyStepSize").text(StepSize);
+            $("#steppers #belt .CopyMicroStepping").text(Microstepping);
+            $("#steppers #belt .CopyBeltPitch").text(BeltPitch);
+            }
+            $("#steppers #belt .changePreset").change(function () {
+              BeltPitchPreset = parseFloat($("#steppers #belt #BeltPresets").val());
+              $("#steppers #belt #BeltPitch").val(BeltPitchPreset);
+              SteppersBelt();
+            });
+            $("#steppers #belt .change").change(function () {
+              SteppersBelt();
+            });
+            SteppersBelt();
+             
+            </script>
+
+            </div><!-- END OF BELTS -->
+
+            <div id="leadscrew">
+              <div id="stepspermmlead"> </div>
+              <h2 id="headings">밀리미터 당 스텝 수 - 리드 스크류 구동 시스템</h2>
+              <p>축을 1mm만큼 이동하기 위해 전자장치가 생성해야 하는 단계 수를 제공합니다.</p>
+              <div class="calculation well">    
+              <div class="row">
+              <div class="col-md-6">
+              <div class="form-group">
+              <label for="StepSize">모터 스텝 각도</label>
+              <select id="StepSize" class="form-control change">
+                <option value="1.8" selected>1.8° (200 per revolution)</option>
+                <option value="0.9">0.9° (400 per revolution)</option>
+                <option value="7.5">7.5° (48 per revolution)</option>
+              </select>
+              </div>
+              </div>
+
+              <div class="col-md-6">
+              <div class="form-group">
+              <label for="MicroStepping">드라이버 마이크로 스테핑</label>
+              <select id="MicroStepping" class="form-control change">
+                <option value="1">1 - full step</option>
+                <option value="2">1/2 - half step</option>
+                <option value="4">1/4 - quater step</option>
+                <option value="8">1/8 - uStep (mostly Gen6)</option>
+                <option value="16" selected>1/16 - uStep (mostly Pololu)</option>
+                <option value="16">1/16- uStep (Smoothieboard)</option>
+                <option value="32">1/32- uStep (Crazy Smoothieboard)</option>
+              </select>
+              </div>
+              </div>
+              </div>
+
+              <div class="row">
+              <div class="col-md-6">
+              <div class="form-group">
+              <label for="LeadscrewPitch">리드 스크류 피치</label>
+              <div class="input-group">
+                <input type="text" id="LeadscrewPitch" value="1.25" size="3"  class="form-control change" /> 
+                <div class="input-group-addon">mm/revolution</div>
+                </div>
+              </div>
+              </div>
+
+              <div class="col-md-6">
+              <div class="form-group">
+              <label for="LeadscrewPresets">피치 프리셋</label>
+              <select id="LeadscrewPresets" class="form-control change changePreset">
+                <option value="1.25">M8 - metric (1.25mm per rotation)</option>
+                <option value="1">M6 - metric (1mm per rotation)</option>
+                <option value="0.8">M5 - metric (0.8mm per rotation)</option>
+                <option value="12">12 (12mm per rotation)</option>
+                <option value="16">16 (16mm per rotation)</option>
+                <option value="25">25 (25mm per rotation)</option>
+                <option value="1.41111">5/16"-18 imperial coarse (1.41111mm per rotation)</option>
+                <option value="1.270">3/16"-20 imperial (1.270mm per rotation)</option>
+                <option value="1.5875">1/4"-16 Acme (1.5875mm per rotation)</option>
+              </select>
+              </div>
+              </div>
+            </div>
+              
+            <div class="row">
+              <div class="col-md-6">
+              <div class="form-group">
+              <label for="PulleyMotor">기어비</label>
+              
+                <div class="row">
+                  <div class="col-xs-5">
+                    <input type="text" id="PulleyMotor" value="1" class="form-control change" />
+                  </div>
+                  <div class="col-xs-1"> :</div>
+                    <div class="col-xs-5"><input type="text" id="PulleyLeadscrew" value="1" class="form-control change" />
+                  </div>
+              </div>   
+              </div>
+            </div>
+
+          </div>
+          </div>
+
+          <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>결과</th>
+              <td>리드 스크류 피치</td>
+              <td>스텝 각도</td>
+              <td>스테핑</td>
+              <td>기어비</td>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr class="success">
+              <td style="background-color:#CBE86B;"><strong class="answer">0</strong></td>
+              <td><span class="CopyLeadscrewPitch">8</span></td>
+              <td><span class="CopyStepSize">1.8</span>°</td>
+              <td>1/<span class="CopyMicroStepping">16</span>th</td>
+              <td><span class="CopyPulleyMotor">2</span> : <span class="CopyPulleyLeadscrew">2</span></td>
+            </tr>
+          </tbody>
+          </table>
+
+            <div class="panel panel-default">
+              <div class="panel-heading">예제</div>
+              <div class="panel-body"><p><strong>M92</strong> g-code는 실시간으로 mm 당 스텝을 설정할 수 있습니다. 다음은 X 축에 대한 결과를 보여주는 예입니다.</p>
+              <pre>M92 Z<span class="answer">0</span></pre></div>
+            </div>
+            
+            <script type="text/javascript"> 
+
+            function SteppersLeadscrew(){ 
+            var StepSize, Microstepping, BeltPitch, ToothCount;
+            StepSize = parseFloat($("#steppers #leadscrew #StepSize").val());
+            Microstepping = parseInt($("#steppers #leadscrew #MicroStepping").val());
+            LeadscrewPitch = parseFloat($("#steppers #leadscrew #LeadscrewPitch").val());
+            PulleyMotor = parseInt($("#steppers #leadscrew #PulleyMotor").val());
+            PulleyLeadscrew = parseInt($("#steppers #leadscrew #PulleyLeadscrew").val());
+            var StepsPerMM;
+            
+            StepsPerMM = ((360/StepSize)*Microstepping)/(LeadscrewPitch)*(PulleyLeadscrew/PulleyMotor);
+            $("#steppers #leadscrew .answer").text(StepsPerMM.toFixed(2)); 
+
+            $("#steppers #leadscrew .CopyLeadscrewPitch").text(LeadscrewPitch);
+            $("#steppers #leadscrew .CopyStepSize").text(StepSize);
+            $("#steppers #leadscrew .CopyMicroStepping").text(Microstepping);
+            $("#steppers #leadscrew .CopyPulleyMotor").text(PulleyMotor);
+            $("#steppers #leadscrew .CopyPulleyLeadscrew").text(PulleyLeadscrew);
+            }
+            $("#steppers #leadscrew .changePreset").change(function () {
+              LeadscrewPitchPreset = parseFloat($("#steppers #leadscrew #LeadscrewPresets").val());
+              $("#steppers #leadscrew #LeadscrewPitch").val(LeadscrewPitchPreset);
+              SteppersLeadscrew();
+            });
+
+            $("#steppers #leadscrew .change").change(function () {
+              SteppersLeadscrew();
+            });
+            SteppersLeadscrew();
+             
+            </script>
+
+          </div> <!-- END OF Leadscrews -->
+
+          <div id="layerheight">
+            <div id="optimallayer"> </div>
+            <h2 id="headings">Z 축의 최적의 레이어 높이</h2>
+            <p>Z 축이 전체 단계 증가분 만큼 이동하는 방식으로 레이어 높이를 선택하는데 도움이 됩니다. Z 축은 일반적으로 비활성 상태에서는 활성화되지 않습니다. 마이크로 스텝 중에 축을 사용할 수 없는 경우 축은 가장 가까운 전체 스텝으로 점프하고 오류를 알려줍니다. 이 효과는 Z 축 모터를 사용 가능한 상태로 유지하는 경우에도 어느 정도 발생합니다. 이는 제국 리드 스크류가있는 기계에 가장 유용하지만 메트릭 리드 스크류로 비정상적인 층 높이에도 유용합니다.</p>
+            <div class="calculation well">
+            
+            <div class="row">
+            <div class="col-md-6">
+            <div class="form-group">
+              <label for="StepSize">모터 스텝 각도</label>
+              <select id="StepSize" class="form-control change">
+                <option value="200">1.8° (200 per revolution)</option>
+                <option value="400">0.9° (400 per revolution)</option>
+                <option value="48">7.5° (48 per revolution)</option>
+              </select>
+              </div>
+              </div>
+
+            <div class="col-md-6">
+            <div class="form-group">
+              <label for="DesiredHeight">원하는 층 높이</label>
+              <div class="input-group">
+                <input type="text" id="DesiredHeight" value="0.3" size="3"  class="form-control change" /> 
+                <div class="input-group-addon">mm</div>
+                </div>
+              </div>
+            </div>
+            </div>
+
+            <div class="row">
+            <div class="col-md-6">
+            <div class="form-group">
+              <label class="span3" style="margin-left: 0px;">원하는 층 높이</label>
+              <div class="input-group">
+                <input type="text" id="LeadscrewPitch" value="1.25" size="3"  class="form-control change" /> 
+                <div class="input-group-addon">mm/revolution</div>
+              </div>
+            </div>
+            </div>
+
+            <div class="col-md-6">
+            <div class="form-group">
+              <label for="LeadscrewPresets">피치 프리셋</label>
+              <select id="LeadscrewPresets" class="form-control change changePreset">
+                <option value="1.25">M8 - metric (1.25mm per rotation)</option>
+                <option value="1">M6 - metric (1mm per rotation)</option>
+                <option value="0.8">M5 - metric (0.8mm per rotation)</option>
+                <option value="12">12 (12mm per rotation)</option>
+                <option value="16">16 (16mm per rotation)</option>
+                <option value="25">25 (25mm per rotation)</option>
+                <option value="1.41111">5/16"-18 imperial coarse (1.41111mm per rotation)</option>
+                <option value="1.270">3/16"-20 imperial (1.270mm per rotation)</option>
+                <option value="1.5875">1/4"-16 Acme (1.5875mm per rotation)</option>
+              </select>
+            </div>
+            </div>
+            </div>
+              
+            <div class="row">
+            <div class="col-md-6">
+            <div class="form-group">
+              <label for="PulleyMotor">기어비</label>
+                <div class="row">
+                  <div class="col-xs-5">
+                    <input type="text" id="PulleyMotor" value="1" class="form-control change" />
+                  </div>
+                  <div class="col-xs-1"> :</div>
+                    <div class="col-xs-5"><input type="text" id="PulleyLeadscrew" value="1" class="form-control change" />
+                  </div>
+              
+              </div>
+              </div>
+            </div>
+            </div>
+            </div>
+            
+            <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>층 높이</th>
+                <td>10cm 이상 오차</td>
+                <td>스텝 수</td>
+                <td>스텝 길이</td>
+              </tr>
+            </thead>
+
+          <tbody id="FloorSuggested">
+            <tr class="success" >
+              <td style="background-color:#CBE86B;"><strong class="answer">0</strong></td>
+              <td><span class="CopyError">8</span>mm</td>
+              <td><span class="CopyStepCount">8</span></td>
+              <td><span class="CopyStepSize">1.8</span>mm</td>
+            </tr>
+          </tbody>
+
+          <tbody id="Suggested">
+            <tr id="suggestedHeight" >
+              <td id="suggestedHighlight" style="background-color:red;"><strong class="answer">0</strong></td>
+              <td><span class="CopyError">8</span>mm</td>
+              <td><span class="CopyStepCount">8</span></td>
+              <td><span class="CopyStepSize">1.8</span>mm</td>
+            </tr>
+          </tbody>
+
+          <tbody id="CeilSuggested">
+            <tr class="success" >
+              <td style="background-color:#CBE86B;"><strong class="answer">0</strong></td>
+              <td><span class="CopyError">8</span>mm</td>
+              <td><span class="CopyStepCount">8</span></td>
+              <td><span class="CopyStepSize">1.8</span>mm</td>
+            </tr>
+          </tbody>
+          </table>
+
+            <script type="text/javascript">
+
+            function SteppersLayerheight(){ 
+            var StepSize, Microstepping, BeltPitch, ToothCount;
+            StepSize = parseFloat($("#steppers #layerheight #StepSize").val());
+            DesiredHeight = parseFloat($("#steppers #layerheight #DesiredHeight").val());
+            LeadscrewPitch = parseFloat($("#steppers #layerheight #LeadscrewPitch").val());
+            PulleyMotor = parseInt($("#steppers #layerheight #PulleyMotor").val());
+            PulleyLeadscrew = parseInt($("#steppers #layerheight #PulleyLeadscrew").val());
+            var StepsPerMM;
+            
+            StepLenght = (parseInt(LeadscrewPitch*1000000)/parseInt(StepSize*1000000))*(PulleyLeadscrew/PulleyMotor);
+            LenghtsPerLayer = (parseInt(DesiredHeight*1000000)/parseInt(StepLenght*1000000));
+            FloorLenghtsPerLayer = Math.floor(LenghtsPerLayer);
+            CeilLenghtsPerLayer = Math.ceil(LenghtsPerLayer);
+
+            if(FloorLenghtsPerLayer == CeilLenghtsPerLayer){
+              // good layer height suggested
+              $("#steppers #layerheight #suggestedHighlight").css("background-color","#CBE86B");
+
+              FloorLenghtsPerLayer--;
+              CeilLenghtsPerLayer++;
+
+              FloorHeight = FloorLenghtsPerLayer*StepLenght;
+              CeilHeight = CeilLenghtsPerLayer*StepLenght;
+              errorSign = 0;
+              errorPer10cm = 0;
+            }else{
+              // not a good layer height suggested
+              $("#steppers #layerheight #suggestedHighlight").css("background-color","#FF8473");
+              FloorHeight = FloorLenghtsPerLayer*StepLenght;
+              FloorHeight = FloorHeight.toPrecision(4);
+              CeilHeight = CeilLenghtsPerLayer*StepLenght;
+              CeilHeight = CeilHeight.toPrecision(4);
+
+              errorPerStep = LenghtsPerLayer - Math.floor(LenghtsPerLayer);
+
+              errorSign = "-";
+              if(errorPerStep > 0.5){
+                errorPerStep = 1-errorPerStep;
+                errorSign = "+";
+              }
+              error10cmsteps = 100/DesiredHeight;
+              errorPer10cm = error10cmsteps*errorPerStep*StepLenght;
+            }
+
+            //alert(LenghtsPerLayer +" "  + FloorLenghtsPerLayer + " - " + CeilLenghtsPerLayer)
+
+            // original line
+            $("#steppers #layerheight #Suggested .answer").text(DesiredHeight); 
+            $("#steppers #layerheight #Suggested .CopyStepCount").text(LenghtsPerLayer); 
+            $("#steppers #layerheight #Suggested .CopyStepSize").text(StepLenght); 
+            $("#steppers #layerheight #Suggested .CopyError").text(errorSign+errorPer10cm); 
+
+            // floor value
+            $("#steppers #layerheight #FloorSuggested .answer").text(FloorHeight);
+            $("#steppers #layerheight #FloorSuggested .CopyStepCount").text(FloorLenghtsPerLayer);
+            $("#steppers #layerheight #FloorSuggested .CopyStepSize").text(StepLenght); 
+            $("#steppers #layerheight #FloorSuggested .CopyError").text("0"); 
+
+            // ceil suggested
+            $("#steppers #layerheight #CeilSuggested .answer").text(CeilHeight);
+            $("#steppers #layerheight #CeilSuggested .CopyStepCount").text(CeilLenghtsPerLayer);
+            $("#steppers #layerheight #CeilSuggested .CopyStepSize").text(StepLenght); 
+            $("#steppers #layerheight #CeilSuggested .CopyError").text("0"); 
+
+            }
+            $("#steppers #layerheight .changePreset").change(function () {
+              LeadscrewPitchPreset = parseFloat($("#steppers #layerheight #LeadscrewPresets").val());
+              $("#steppers #layerheight #LeadscrewPitch").val(LeadscrewPitchPreset);
+              SteppersLayerheight();
+            });
+
+            $("#steppers #layerheight .change").change(function () {
+              SteppersLayerheight();
+            });
+            SteppersLayerheight();
+             
+            </script>
+
+          </div> <!-- END OF layerheight -->
+
+          </section>
+
+          <section id="accelerationsection">
+
+          <div id="acceleration"></div>
+          <div class="page-header">
+            <h1>가속</h1>
+          </div>
+
+          <div id="maxSpeed">
+            <div id="speed"> </div>
+            <h2 id="headings">최대 속도</h2>
+            <p>가속 설정, 축의 거리/길이를 입력하면 기계가 원하는 속도와 시간을 맞출 수 있습니다.</p>
+            <div class="calculation well">
+              
+              <div class="row">
+                <div class="col-md-6">
+                <div class="form-group">
+                <label for="acceleration">가속</label>
+                <div class="input-group">
+                  <input type="text" id="acceleration" value="3000" size="3"  class="form-control change" /> 
+                  <div class="input-group-addon">mm/s<sup>2</sup></div>
+                </div>
+                </div>
+                </div>
+
+                <div class="col-md-6">
+                <div class="form-group">
+                <label for="distance">거리 또는 축 길이</label>
+                <div class="input-group">
+                  <input type="text" id="distance" value="200" size="3"  class="form-control change" /> 
+                  <div class="input-group-addon">mm</div>
+                </div>
+                </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                <div class="form-group">
+                <label for="Desired speed">원하는 속도</label>
+                <div class="input-group">
+                  <input type="text" id="desiredSpeed" value="150" size="3"  class="form-control change" /> 
+                  <div class="input-group-addon">mm/s</div>
+                </div>
+                </div>
+                </div>
+              </div>
+              </div>
+            </div>
+            
+            <div class="calculation" id="maxAccelerationGraph" style="min-height: 300px;">
+            </div>
+
+            <script src="../js/jquery.flot.js"></script>
+            <script type="text/javascript"> 
+            var $ = jQuery;
+
+            function AccelerationMaxSpeed(){ 
+            var StepSize, Microstepping, BeltPitch, ToothCount;
+            Acceleration = parseFloat($("#maxSpeed #acceleration").val());
+            Distance = parseInt($("#maxSpeed #distance").val());
+            Speed = parseFloat($("#maxSpeed #desiredSpeed").val());
+
+            // graph
+            acceleration = Acceleration;
+            axisLenght = Distance;
+            speed = Speed;
+
+            timeToFullSpeed = speed/acceleration;
+            distanceToFullSpeed = (acceleration*timeToFullSpeed*timeToFullSpeed)/2;
+
+            var d2 = [];
+            if((axisLenght/2)<= distanceToFullSpeed){
+              time = Math.sqrt((axisLenght)/acceleration);
+              speed = acceleration*time;
+              timeToFullSpeed = speed/acceleration;
+              distanceToFullSpeed = (acceleration*timeToFullSpeed*timeToFullSpeed)/2;
+              
+            }else{
+            d2.push([distanceToFullSpeed, speed]);
+            d2.push([axisLenght-distanceToFullSpeed, speed]);
+
+            }
+
+            var d1 = [];
+            
+            for (var i = 0; i <= axisLenght/2; i += axisLenght/400) {
+              time = Math.sqrt((2*i)/acceleration);
+              speed = acceleration*time;
+              d1.push([i, speed]);
+            }
+
+            decelerationStartsAt = axisLenght-distanceToFullSpeed;
+
+            for (var i = axisLenght/2; i <= axisLenght; i += axisLenght/400) {
+              fakeDistance = axisLenght-i;
+              time = Math.sqrt((2*fakeDistance)/acceleration);
+              speed = acceleration*time;
+              d1.push([i, speed]);
+            }
+
+            $.plot("#maxAccelerationGraph", [ d1, d2]);
+
+            }
+
+            $("#maxSpeed .change").change(function () {
+              AccelerationMaxSpeed();
+            });
+            AccelerationMaxSpeed();
+     
+          </script>
+
+          </div> <!-- END OF layerheight -->
+
+          </section>
+
+        </div>
+     </div>
+  </div>
+</div><!-- #main -->
+</div><!-- #page -->
+
+</body>
+
+</html>

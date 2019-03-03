@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-kr">
+
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="keywords" content="Stepper Motors Calculator" />
+<meta name="description" content="Stepper Motors Calculator" />
+
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link href="css/bootstrap.united.min.css" rel="stylesheet">
+<link href="css/site.css" rel="stylesheet">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+
+<title>Stepper Motors Calculator</title>
+<style type="text/css">
+#language-toggle { padding:25px 0 0 0; }
+.nav-button ul {list-style-type:none; margin:0px; padding-left:25px; margin-right:15px; display:flex; flex-wrap: wrap;} 
+.nav-button ul li {float:left; width:205px; margin:3px;} 
+.nav-button ul li a {display:block; padding:4px 4px 4px 60px; margin:2px; background-color:#202; border:solid 1px #ccc; color:#fff; text-decoration:none; font-weight:bold; text-align:left; height:50px;  display:table-cell; vertical-align:middle; width:205px;  background-repeat:no-repeat; background-position:left;}
+.nav-button ul li a:hover, .nav-button ul li a.active {background-color:#c62920;}
+
+#request-nav {list-style-type:none; margin:2px 0px 0px 2px; color:#999; padding:0px; display:table ; float:left; width:205px;} 
+#request-nav a {display:block; padding:1px 0px 2px 60px; margin:2px; border:1px solid #999; background-color:#FFF; border:solid 3px #ccc; color:#999; text-decoration:none; font-weight:bold; text-align:left; height:50px;  display:table-cell; vertical-align:middle; width:205px;  background-repeat:no-repeat; background-position:left;}
+
+.rtl #request-nav {margin:2px 2px 0px 0px; float:right; padding: 0px;} 
+.rtl #request-nav a {padding:1px 60px 2px 0px; text-align:right; background-position:right;}
+
+.rtl .nav-button ul {margin-left:15px; margin-right:0px; padding: 0px;} 
+.rtl .nav-button ul li {float:right;} 
+.rtl .nav-button ul li a {padding:4px 60px 4px 4px; text-align:right; background-position:right;}
+
+
+.flag-english a {background:url(images/flag-united-kingdom-icon.png?la=en)}
+.flag-korean a {background:url(images/flag-korea-icon.png?la=en)}
+.flag-chinese a {background:url(images/flag-china-icon.png?la=en)}
+
+.battery-life a {background:url(images/battery-icon2125.png?la=en)}
+.btu-joules a {background:url(images/joules-icon2125.png?la=en)}
+.capacitance a {background:url(images/capacitor-icon2125.png?la=en)}
+.capacitor-discharge a {background:url(images/capacitor-discharge-icon2125.png?la=en)}
+.capacitor-series-parallel a {background:url(images/capacitor-series-parallel-icon2125.png?la=en)}
+.current-divider a {background:url(images/current-divider-icon2125.png?la=en)}
+.dbm-watts a {background:url(images/dbm-icon2125.png?la=en)}
+.force a {background:url(images/force-icon2125.png?la=en)}
+.fractions a {background:url(images/decimal-icon2125.png?la=en)}
+.inductance a {background:url(images/inductance-icon2125.png?la=en)}
+.led-series a {background:url(images/led-icon2125.png?la=en)}
+.length a {background:url(images/ruler-icon2125.png?la=en)}
+.ohms-law a {background:url(images/ohms-icon2125.png?la=en)}
+.pcb-trace-width a {background:url(images/pcb-trace-width-icon2125.png?la=en)}
+.pressure a {background:url(images/pressure-icon2125.png?la=en)}
+.reactance a {background:url(images/reactance-icon2125.png?la=en)}
+.request a {background:url(images/request-icon.png)}
+.resistor-parallel-series a {background:url(images/resistor-parallel-series-icon2125.png?la=en)}
+.resistors a {background:url(images/resistor-icon2125.png?la=en)}
+.temperature a {background:url(images/temp-icon2125.png?la=en)}
+.time a {background:url(images/time-icon2125.png?la=en)}
+.voltage-divider a {background:url(images/voltage-divider-icon2125.png?la=en)}
+.volume a {background:url(images/volume-icon2125.png?la=en)}
+.weight a  {background:url(images/scales-icon2125.png?la=en)}
+
+@media screen and (max-width:500px){
+.nav-button ul {padding:0px;} 
+.nav-button ul li {width: auto; margin:3px; padding-left: 25px;} 
+#request-nav {width: auto; padding-left: 12.5px;}
+}
+</style>
+<link rel="stylesheet" type="text/css" href="css/fonts.css" />
+<link rel="stylesheet" type="text/css" href="css/global3683.css" />
+        
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" class="ltr">
+    <div class="wrap">
+        <div class="nav-wrap" id="siteNavigation"></div>
+        <div class="container">
+            <div class="site-index">
+                <div class="body-content">
+
+<h1 class="headline-border">Stepper Motors Calculators</h1>
+<p>Steps per millimeter - belt driven systems</p>
+<p>Steps per millimeter - leadscrew driven systems</p>
+<p>Optimal layer height for your Z axis</p>
+<p>Acceleration</p>
+<div class="nav-button">
+<ul>
+    <li class="flag-english"><a href="en/index.html">English</a></li>
+</ul>
+</div>
+<div class="clear">&nbsp;</div>
+<h1 class="headline-border">스테퍼 모터 계산기</h1>
+<p>밀리미터 당 단계 - 벨트 구동 시스템</p>
+<p>밀리미터 당 스텝 수 - 리드 스크류 구동 시스템</p>
+<p>Z 축의 최적 레이어 높이</p>
+<p>가속</p>
+<div class="nav-button">
+<ul>
+    <li class="flag-korean"><a href="ko/index.html">한국어</a></li>
+</ul>
+</div>
+<div class="clear">&nbsp;</div>
+<!--
+<h1 class="headline-border">步进电机计算器</h1>
+<p>每毫米步数 - 皮带驱动系统</p>
+<p>每毫米步数 - 导螺杆驱动系统</p>
+<p>Z轴的最佳图层高度</p>
+<P>加速</P>
+<div class="nav-button">
+<ul>
+    <li class="flag-chinese"><a href="zh/index.html">中文`</a></li>
+</ul>
+</div>
+<div class="clear">&nbsp;</div>
+-->  
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer gutter-lg-top">
+        <div class="container">
+            <a href="en/release-notes.html"><i class="fa fa-user-o gutter-sm-right"></i> Release Notes</a>
+	        <span class="pull-right"> | </span>
+            <a href="en/privacy-policy.html" class="pull-right gutter-md-left">Privacy Policy</a>
+            <span class="pull-right"> | </span>
+            <a href="https://github.com/ZalophusDokdo/StepperMotorsCalculator" target="_blank" class="pull-right gutter-md-right"><i class="fa fa-github gutter-sm-right"></i>Github</a>
+        </div>
+    </footer>
+</div>
+
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/jquery.bootstrap-autohidingnavbar.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                jQuery('#siteNavigation').load('navigation.html', function(){
+                    jQuery("nav.navbar-fixed-top").autoHidingNavbar({animationDuration: 250, showOnUpscroll: true, showOnBottom: false});
+                    setTimeout(function(){$("ul.navbar-right li:eq(0)").addClass('active');}, 100);
+                });
+            });
+            
+        </script>
+    </body>
+
+</html>
