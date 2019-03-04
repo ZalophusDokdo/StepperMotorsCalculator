@@ -6,6 +6,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link href="../css/bootstrap.united.min.css" rel="stylesheet">
+<link href="../css/site.css" rel="stylesheet">
+<link href="../css/font-awesome.min.css" rel="stylesheet">
+
 <title>Stepper Motors Calculator</title>
 <link rel="pingback" href="#">
 
@@ -36,9 +42,16 @@ img.emoji {
 <script type='text/javascript' src='../js/jquery/jqueryb8ff.js?ver=1.12.4'></script>
 <script type='text/javascript' src='../js/jquery/jquery-migrate.min330a.js?ver=1.4.1'></script>
 
+<link rel="stylesheet" type="text/css" href="../css/fonts.css" />
+<link rel="stylesheet" type="text/css" href="../css/global3683.css" />
 </head>
 
 <body class="page-template page-template-calculator page-template-calculator-php page page-id-3416 group-blog klein wpb-js-composer js-comp-ver-4.3.4 vc_responsive">
+    <div class="wrap">
+        <div class="nav-wrap" id="siteNavigation"></div>
+        <div class="container">
+            <div class="site-index">
+                <div class="body-content">
 
 <div id="page" class="hfeed site boxed">
 <div id="main" class="container site-main">
@@ -662,6 +675,33 @@ img.emoji {
 </div><!-- #main -->
 </div><!-- #page -->
 
-</body>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer gutter-lg-top">
+        <div class="container">
+            <a href="en/release-notes.html"><i class="fa fa-user-o gutter-sm-right"></i> Release Notes</a>
+	        <span class="pull-right"> | </span>
+            <a href="en/privacy-policy.html" class="pull-right gutter-md-left">Privacy Policy</a>
+            <span class="pull-right"> | </span>
+            <a href="https://github.com/ZalophusDokdo/StepperMotorsCalculator" target="_blank" class="pull-right gutter-md-right"><i class="fa fa-github gutter-sm-right"></i>Github</a>
+        </div>
+    </footer>
+</div>
+
+        <script src="../js/jquery.js"></script>
+        <script src="../js/bootstrap.js"></script>
+        <script src="../js/jquery.bootstrap-autohidingnavbar.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                jQuery('#siteNavigation').load('navigation.html', function(){
+                    jQuery("nav.navbar-fixed-top").autoHidingNavbar({animationDuration: 250, showOnUpscroll: true, showOnBottom: false});
+                    setTimeout(function(){$("ul.navbar-right li:eq(0)").addClass('active');}, 100);
+                });
+            });
+            
+        </script>
+    </body>
 
 </html>
