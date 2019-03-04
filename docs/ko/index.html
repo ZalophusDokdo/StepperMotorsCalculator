@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Stepper Motors Calculator"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -13,27 +14,11 @@
 <link href="../css/font-awesome.min.css" rel="stylesheet">
 
 <title>Stepper Motors Calculator</title>
-<link rel="pingback" href="#">
 
 <!-- favicon -->
 <link rel="icon" href="../favicon.ico" type="image/x-icon" />
 <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
 <!-- favicon end -->
-
-<style type="text/css">
-img.wp-smiley,
-img.emoji {
-	display: inline !important;
-	border: none !important;
-	box-shadow: none !important;
-	height: 1em !important;
-	width: 1em !important;
-	margin: 0 .07em !important;
-	vertical-align: -0.1em !important;
-	background: none !important;
-	padding: 0 !important;
-}
-</style>
 
 <link rel='stylesheet' id='klein-bootstrap-css'  href='../css/bootstrap7a2a.css?ver=2.1.4.4' type='text/css' media='all' />
 <link rel='stylesheet' id='klein-layout-css'  href='../css/layout7a2a.css?ver=2.1.4.4' type='text/css' media='all' />
@@ -56,12 +41,6 @@ img.emoji {
 
 <div id="page" class="hfeed site boxed">
 <div id="main" class="container site-main">
-
-  <!-- Breadcrumb NavXT 5.2.0 -->
-
-  <script type="text/javascript">
-            var $ = jQuery;
-  </script>
 
   <div id="calculator">
     <div class="row">
@@ -635,7 +614,6 @@ img.emoji {
             }else{
             d2.push([distanceToFullSpeed, speed]);
             d2.push([axisLenght-distanceToFullSpeed, speed]);
-
             }
 
             var d1 = [];
@@ -656,7 +634,6 @@ img.emoji {
             }
 
             $.plot("#maxAccelerationGraph", [ d1, d2]);
-
             }
 
             $("#maxSpeed .change").change(function () {
@@ -665,7 +642,6 @@ img.emoji {
             AccelerationMaxSpeed();
      
           </script>
-
           </div> <!-- END OF layerheight -->
 
           </section>
@@ -691,7 +667,7 @@ img.emoji {
     </footer>
 </div>
 
-        <script src="../js/jquery.js"></script>
+        <!--script src="../js/jquery.js"></script-->
         <script src="../js/bootstrap.js"></script>
         <script src="../js/jquery.bootstrap-autohidingnavbar.js"></script>
         <script type="text/javascript">
